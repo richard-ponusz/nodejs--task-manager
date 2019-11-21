@@ -34,7 +34,7 @@ MongoClient.connect(connectionURL, { useNewUrlParser: true, useUnifiedTopology: 
   })
 
   // in tasks DB set every completed boolean value to true if it was false before 
-  db.collection('tasks').updateMany({
+  /* db.collection('tasks').updateMany({
     'completed': false
   }, {
     $set: {
@@ -43,4 +43,18 @@ MongoClient.connect(connectionURL, { useNewUrlParser: true, useUnifiedTopology: 
   })
     .then(result => console.log(result))
     .catch(error => console.log(error));
+    */
+
+  // Delete users whose age is 26 ()
+  /*
+    db.collection('users').deleteMany({
+      age: 26
+    }).then(result => console.log(result))
+    .catch(error => console.log(error));
+  */
+ db.collection('tasks').deleteOne({
+   description: "task 2 description"
+ }).then(result => console.log(result))
+ .catch(error => console.log(error));
+
 });
