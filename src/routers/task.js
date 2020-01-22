@@ -14,7 +14,7 @@ router.post('/tasks', async (req, res) => {
     }
 })
 
-router.get('/tasks', (req, res) => {
+router.get('/tasks', async (req, res) => {
     try {
         const tasks = await Task.find({});
         res.send(tasks);
@@ -23,7 +23,7 @@ router.get('/tasks', (req, res) => {
     }
 })
 
-router.get('/tasks/:id', (req, res) => {
+router.get('/tasks/:id', async (req, res) => {
     const _id = req.params.id;
 
     try {
