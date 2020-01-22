@@ -1,5 +1,5 @@
 Workplace: 
-C:\Programming\mongodb\bin/mongod.exe --dbpath="C:\Programming\mongodb-data"
+C:\Programming\mongodb\bin\mongod.exe --dbpath="C:\Programming\mongodb-data"
 
 // ----------------------------------------------------------------------------------
 Home: 

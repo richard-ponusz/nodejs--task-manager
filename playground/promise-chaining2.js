@@ -14,11 +14,24 @@ const Task = require('../src/models/task');
 //     })
 
 // Andrew's solution:
-Task.findByIdAndDelete('5e09080e19c1632fc09ad66e').then((task) => {
+Task.findByIdAndDelete('5dd55aa39dba5d1d0c5caf2b').then((task) => {
     console.log(task);
-    return Task.countDocuments({ completed: false})
+    return Task.countDocuments({ completed: false })
 }).then((result) => {
-    console.log(result)
+    console.log('success', result)
 }).catch((e) => {
-    console.log(e);
+    console.log('error', e);
+})
+
+// with Async/await
+const deleteTaskAndCount = async (id) => {
+    await Task.findByIdAndDelete(id);
+    const count = await Task.countDocuments({ completed: false });
+    return count;
+}
+
+deleteTaskAndCount('').then((count) => {
+    console.log(count);
+}).catch((error) => {
+    console.log(error);
 })
