@@ -52,9 +52,9 @@ MongoClient.connect(connectionURL, { useNewUrlParser: true, useUnifiedTopology: 
     }).then(result => console.log(result))
     .catch(error => console.log(error));
   */
- db.collection('tasks').deleteOne({
-   description: "task 2 description"
- }).then(result => console.log(result))
- .catch(error => console.log(error));
+  db.collection('tasks').deleteOne({
+    description: "task 2 description"
+  }).then(result => console.log(result))
+    .catch(error => console.log(error));
 
 });
