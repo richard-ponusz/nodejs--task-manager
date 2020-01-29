@@ -19,7 +19,6 @@ router.post('/tasks', auth, async (req, res) => {
     }
 })
 
-<<<<<<< HEAD
 // get all tasks, 
 // GET tasks?completed=false
 // GET tasks?limit=10&skip=4
@@ -37,9 +36,6 @@ router.get('/tasks', auth, async (req, res) => {
         sort[parts[0]] = parts[1] === 'desc' ? -1 : 1;
     }
 
-=======
-router.get('/tasks', async (req, res) => {
->>>>>>> master
     try {
         await req.user.populate({
             path: 'tasks',
